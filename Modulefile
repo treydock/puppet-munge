@@ -1,5 +1,5 @@
 name    'treydock-munge'
-version '0.0.1'
+version '0.0.2'
 source 'git://github.com/treydock/puppet-munge.git'
 author 'treydock'
 license 'Apache 2.0'
