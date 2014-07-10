@@ -20,4 +20,14 @@ describe 'munge' do
   include_context 'munge::config'
   include_context 'munge::service'
 
+  # Test validate_array parameters
+  [
+    :install_dev,
+  ].each do |p|
+    context "when #{p} => 'foo'" do
+      let(:params) {{ p => 'foo' }}
+      it { expect { should create_class('munge') }.to raise_error(Puppet::Error, /is not a boolean/) }
+    end
+  end
+
 end
