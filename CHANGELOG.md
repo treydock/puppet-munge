@@ -2,6 +2,13 @@
 
 Release notes for the treydock-munge module.
 
+
+------------------------------------------
+
+#### 0.1.1 - 2014-07-10
+
+Fix metadata.json dependencies
+
 ------------------------------------------
 
 #### 0.1.0 - 2014-07-10
