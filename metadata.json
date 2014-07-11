@@ -1,0 +1,30 @@
+{
+  "name": "treydock-munge",
+  "version": "0.1.0",
+  "author": "treydock",
+  "summary": "munge Puppet module",
+  "license": "Apache 2.0",
+  "source": "git://github.com/treydock/puppet-munge.git",
+  "issues_url": "https://github.com/treydock/puppet-munge/issues",
+  "project_page": "https://github.com/treydock/puppet-munge",
+  "tags": [ "munge", "redhat", "centos" ],
+  "operatingsystem_support": [
+    {
+      "operatingsystem": "RedHat",
+      "operatingsystemrelease": [ "5.0", "6.0", "7.0" ]
+    },
+    {
+      "operatingsystem": "CentOS",
+      "operatingsystemrelease": [ "5.0", "6.0", "7.0" ]
+    },
+    {
+      "operatingsystem": "Scientific",
+      "operatingsystemrelease": [ "5.0", "6.0", "7.0" ]
+    }
+  ],
+  "dependencies": [
+    { "name": "puppetlabs-stdlib", "version_range": ">= 3.2.0 <5.0.0" },
+    { "name": "stahnma-epel", "version_range": "0.x" }
+  ]
+}
+
