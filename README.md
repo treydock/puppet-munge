@@ -53,6 +53,14 @@ Package 'ensure' property (defaults to 'present').
 
 Munge package name.
 
+#####`install_dev`
+
+Boolean.  Sets if the munge-devel package should be installed (defaults to false).
+
+#####`dev_package_name`
+
+Munge dev package name.
+
 #####`service_name`
 
 Munge service name
