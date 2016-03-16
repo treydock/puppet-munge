@@ -5,6 +5,7 @@
 class munge (
   $package_ensure       = 'present',
   $package_name         = $munge::params::package_name,
+  $package_manage_repo  = true,
   $install_dev          = false,
   $dev_package_name     = $munge::params::dev_package_name,
   $service_name         = $munge::params::service_name,
