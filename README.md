@@ -53,6 +53,10 @@ Package 'ensure' property (defaults to 'present').
 
 Munge package name.
 
+#####`package_manage_repo`
+
+Boolean.  Sets if the repository class should be included ('::epel') and if the package should require the corresponding Yumrepo class (defaults to true). 
+
 #####`install_dev`
 
 Boolean.  Sets if the munge-devel package should be installed (defaults to false).
