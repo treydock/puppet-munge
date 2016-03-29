@@ -17,7 +17,9 @@ class munge (
   $munge_key_source     = undef,
 ) inherits munge::params {
 
+  validate_bool($package_manage_repo)
   validate_bool($install_dev)
+  validate_bool($service_enable)
 
   anchor { 'munge::start': }->
   class { '::munge::install': }->
