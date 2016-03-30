@@ -22,7 +22,9 @@ describe 'munge' do
 
   # Test validate_array parameters
   [
+    :package_manage_repo,
     :install_dev,
+    :service_enable,
   ].each do |p|
     context "when #{p} => 'foo'" do
       let(:params) {{ p => 'foo' }}
