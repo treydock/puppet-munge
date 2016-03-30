@@ -27,6 +27,9 @@ exclude_paths = [
 PuppetLint.configuration.ignore_paths = exclude_paths
 PuppetSyntax.exclude_paths = exclude_paths
 
+# Avoid 'autoload module layout' warning (as the repository is not named munge)
+PuppetLint.configuration.send('disable_autoloader_layout')
+
 desc "Run acceptance tests"
 RSpec::Core::RakeTask.new(:acceptance) do |t|
   t.pattern = 'spec/acceptance'
