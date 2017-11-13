@@ -1,8 +1,9 @@
 # puppet-munge
 
+[![Puppet Forge](http://img.shields.io/puppetforge/v/treydock/munge.svg)](https://forge.puppetlabs.com/treydock/munge)
 [![Build Status](https://travis-ci.org/treydock/puppet-munge.png)](https://travis-ci.org/treydock/puppet-munge)
 
-####Table of Contents
+#### Table of Contents
 
 1. [Overview](#overview)
 2. [Usage - Configuration options](#usage)
@@ -45,56 +46,68 @@ Manage munge and define a site specific munge.key
 
 #### munge
 
-#####`package_ensure`
+##### `package_ensure`
 
 Package 'ensure' property (defaults to 'present').
 
-#####`package_name`
+##### `package_name`
 
 Munge package name.
 
-#####`install_dev`
+##### `install_dev`
 
 Boolean.  Sets if the munge-devel package should be installed (defaults to false).
 
-#####`dev_package_name`
+##### `dev_package_name`
 
 Munge dev package name.
 
-#####`service_name`
+##### `service_name`
 
 Munge service name
 
-#####`service_ensure`
+##### `service_ensure`
 
 Munge service 'ensure' property (defaults to 'running').
 
-#####`service_enable`
+##### `service_enable`
 
 Munge service 'enable' property (defaults to true).
 
-#####`service_hasstatus`
+##### `service_hasstatus`
 
 Munge service hasstatus value.
 
-#####`service_hasrestart`
+##### `service_hasrestart`
 
 Munge service hasrestart value.
 
-#####`munge_key_path`
+##### `munge_key_path`
 
 Path to the munge.key file.  Default is OS dependent.
 
-#####`munge_key_source`
+##### `munge_key_source`
 
 The source for the munge.key file (defaults to undef).
+
+##### `manage_user`
+
+Boolen that determines if munge user and group should be managed. Default is `true`
+
+##### `munge_user_uid`
+
+UID of the munge user. Default is `undef`
+
+##### `munge_group_gid`
+
+GID of the munge group. Default is `undef`
 
 ## Limitations
 
 This module has been tested on:
 
-* CentOS 6 x86_64
-* Scientific Linux 6 x86_64
+* CentOS/RedHat 6 x86_64
+* CentOS/RedHat 7 x86_64
 
 ## Development
 
