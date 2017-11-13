@@ -14,9 +14,13 @@ class munge (
   Boolean $service_hasrestart           = $munge::params::service_hasrestart,
   Stdlib::Absolutepath $munge_key_path  = $munge::params::munge_key_path,
   Optional[String] $munge_key_source    = undef,
+  Boolean $manage_user                  = true,
+  Optional[Integer] $munge_user_uid     = undef,
+  Optional[Integer] $munge_group_gid    = undef,
 ) inherits munge::params {
 
   anchor { 'munge::start': }
+  -> class { '::munge::user': }
   -> class { '::munge::install': }
   -> class { '::munge::config': }
   ~> class { '::munge::service': }

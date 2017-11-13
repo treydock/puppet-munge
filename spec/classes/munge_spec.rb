@@ -10,11 +10,55 @@ describe 'munge' do
       it { should create_class('munge') }
       it { should contain_class('munge::params') }
 
-      it { should contain_anchor('munge::start').that_comes_before('Class[munge::install]') }
+      it { should contain_anchor('munge::start').that_comes_before('Class[munge::user]') }
+      it { should contain_class('munge::user').that_comes_before('Class[munge::install]') }
       it { should contain_class('munge::install').that_comes_before('Class[munge::config]') }
       it { should contain_class('munge::config').that_notifies('Class[munge::service]') }
       it { should contain_class('munge::service').that_comes_before('Anchor[munge::end]') }
       it { should contain_anchor('munge::end') }
+
+      context 'munge::user' do
+        it do
+          is_expected.to contain_group('munge').with({
+            :ensure     => 'present',
+            :name       => 'munge',
+            :gid        => nil,
+            :system     => 'true',
+            :forcelocal => 'true',
+          })
+        end
+
+        it do
+          is_expected.to contain_user('munge').with({
+            :ensure     => 'present',
+            :name       => 'munge',
+            :uid        => nil,
+            :gid        => 'munge',
+            :shell      => '/sbin/nologin',
+            :home       => '/var/run/munge',
+            :managehome => 'false',
+            :comment    => "Runs Uid 'N' Gid Emporium",
+            :system     => 'true',
+            :forcelocal => 'true',
+          })
+        end
+
+        context 'when munge_group_gid defined' do
+          let(:params) {{ :munge_group_gid => 99 }}
+          it { is_expected.to contain_group('munge').with_gid('99') }
+        end
+
+        context 'when munge_user_uid defined' do
+          let(:params) {{ :munge_user_uid => 99 }}
+          it { is_expected.to contain_user('munge').with_uid('99') }
+        end
+
+        context 'when manage_user => false' do
+          let(:params) {{ :manage_user => false }}
+          it { is_expected.not_to contain_group('munge') }
+          it { is_expected.not_to contain_user('munge') }
+        end
+      end
 
       context "munge::install" do
         it { should contain_class('epel') }
