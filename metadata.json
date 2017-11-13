@@ -3,7 +3,7 @@
   "version": "0.1.1",
   "author": "treydock",
   "summary": "munge Puppet module",
-  "license": "Apache 2.0",
+  "license": "Apache-2.0",
   "source": "git://github.com/treydock/puppet-munge.git",
   "issues_url": "https://github.com/treydock/puppet-munge/issues",
   "project_page": "https://github.com/treydock/puppet-munge",
@@ -23,8 +23,11 @@
     }
   ],
   "dependencies": [
-    { "name": "puppetlabs-stdlib", "version_requirement": ">= 3.2.0 <5.0.0" },
-    { "name": "stahnma-epel", "version_requirement": "0.x" }
+    { "name": "puppetlabs/stdlib", "version_requirement": ">= 4.13.1 <5.0.0" },
+    { "name": "stahnma/epel", "version_requirement": ">= 1.0.0 <2.0.0" }
+  ],
+  "requirements": [
+    {"name": "puppet", "version_requirement": ">= 4.7.0 < 6.0.0" }
   ]
 }
 

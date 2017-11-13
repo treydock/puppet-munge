@@ -115,7 +115,7 @@ Run unit tests
 
 If you have Vagrant >= 1.2.0 installed you can run system tests
 
-    bundle exec rake acceptance
+    bundle exec rake beaker
 
 ## TODO
 
