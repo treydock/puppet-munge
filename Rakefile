@@ -9,7 +9,7 @@ end
 # Disable puppet-lint checks
 PuppetLint.configuration.send("disable_80chars")
 PuppetLint.configuration.send('disable_quoted_booleans')
-PuppetLint.configuration.log_format = "%{path}:%{linenumber}:%{check}:%{KIND}:%{message}"
+PuppetLint.configuration.log_format = "%{path}:%{line}:%{check}:%{KIND}:%{message}"
 PuppetLint.configuration.fail_on_warnings = true
 
 # Forsake support for Puppet 2.6.2 for the benefit of cleaner code.

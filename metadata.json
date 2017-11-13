@@ -7,19 +7,19 @@
   "source": "git://github.com/treydock/puppet-munge.git",
   "issues_url": "https://github.com/treydock/puppet-munge/issues",
   "project_page": "https://github.com/treydock/puppet-munge",
-  "tags": [ "munge", "redhat", "centos" ],
+  "tags": [ "munge" ],
   "operatingsystem_support": [
     {
       "operatingsystem": "RedHat",
-      "operatingsystemrelease": [ "5.0", "6.0", "7.0" ]
+      "operatingsystemrelease": [ "6", "7" ]
     },
     {
       "operatingsystem": "CentOS",
-      "operatingsystemrelease": [ "5.0", "6.0", "7.0" ]
+      "operatingsystemrelease": [ "6", "7" ]
     },
     {
       "operatingsystem": "Scientific",
-      "operatingsystemrelease": [ "5.0", "6.0", "7.0" ]
+      "operatingsystemrelease": [ "6", "7" ]
     }
   ],
   "dependencies": [
