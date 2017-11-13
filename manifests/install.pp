@@ -4,8 +4,6 @@
 #
 class munge::install {
 
-  include '::munge'
-
   case $::osfamily {
     'RedHat': {
       include '::epel'
