@@ -1,7 +1,7 @@
 HOSTS:
   centos-6-x64-docker:
     roles:
-      - master
+      - agent
     platform: el-6-x86_64
     hypervisor: docker
     image: centos:6
@@ -10,7 +10,7 @@ HOSTS:
       - '/sbin/init'
     docker_image_commands:
       - 'yum install -y tar wget git'
-    docker_container_name: pcp-el6
+    docker_container_name: munge-el6
 CONFIG:
   log_level: debug
   type: foss
