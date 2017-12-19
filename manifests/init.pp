@@ -3,6 +3,7 @@
 # See README.md for more details.
 #
 class munge (
+  Boolean $use_epel                     = $munge::params::use_epel,
   String $package_ensure                = 'present',
   String $package_name                  = $munge::params::package_name,
   Boolean $install_dev                  = false,
@@ -21,6 +22,7 @@ class munge (
 
   anchor { 'munge::start': }
   -> class { '::munge::user': }
+  -> class { '::munge::repo': }
   -> class { '::munge::install': }
   -> class { '::munge::config': }
   ~> class { '::munge::service': }

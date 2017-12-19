@@ -37,6 +37,7 @@ Manage munge and define a site specific munge.key
 
 #### Private classes
 
+* `munge::repo`: Manages inclusion of stahnma/epel.
 * `munge::install`: Installs munge packages.
 * `munge::config`: Configures munge.
 * `munge::service`: Manages the munge service.
@@ -46,9 +47,13 @@ Manage munge and define a site specific munge.key
 
 #### munge
 
+##### `use_epel`
+
+Whether or not to include the stahnma/epel module. If set to false, it is assumed that the munge RPMs are available via a different yum repository or package management system such as Spacewalk. (defaults to 'true').
+
 ##### `package_ensure`
 
-Package 'ensure' property (defaults to 'present').
+package 'ensure' property (defaults to 'present').
 
 ##### `package_name`
 
