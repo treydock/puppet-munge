@@ -7,7 +7,7 @@ class munge::repo {
   if $::munge::use_epel {
     case $::osfamily {
       'RedHat': {
-        include '::epel'
+        contain ::epel
       }
       default: {
         # Do nothing
