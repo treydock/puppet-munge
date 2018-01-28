@@ -11,7 +11,8 @@ describe 'munge' do
       it { should contain_class('munge::params') }
 
       it { should contain_anchor('munge::start').that_comes_before('Class[munge::user]') }
-      it { should contain_class('munge::user').that_comes_before('Class[munge::install]') }
+      it { should contain_class('munge::user').that_comes_before('Class[munge::repo]') }
+      it { should contain_class('munge::repo').that_comes_before('Class[munge::install]') }
       it { should contain_class('munge::install').that_comes_before('Class[munge::config]') }
       it { should contain_class('munge::config').that_notifies('Class[munge::service]') }
       it { should contain_class('munge::service').that_comes_before('Anchor[munge::end]') }
@@ -60,14 +61,22 @@ describe 'munge' do
         end
       end
 
-      context "munge::install" do
-        it { should contain_class('epel') }
+      context "munge::repo" do
+        it do
+          should contain_class('epel')
+        end
+        
+        context 'when use_epel => false' do
+          let(:params) {{ :use_epel => false }}
+          it { should_not contain_class('epel') }
+        end
+      end
 
+      context "munge::install" do
         it do
           should contain_package('munge').only_with({
             :ensure   => 'present',
             :name     => 'munge',
-            :require  => 'Yumrepo[epel]',
           })
         end
 
@@ -80,7 +89,6 @@ describe 'munge' do
             should contain_package('munge-devel').only_with({
               :ensure   => 'present',
               :name     => 'munge-devel',
-              :require  => 'Yumrepo[epel]',
             })
           end
         end
