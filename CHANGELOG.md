@@ -2,6 +2,13 @@
 
 Release notes for the treydock-munge module.
 
+## [1.1.0](https://github.com/treydock/puppet-munge/tree/1.1.0) (2018-01-28)
+[Full Changelog](https://github.com/treydock/puppet-munge/compare/1.0.0...1.1.0)
+
+**Implemented enhancements:**
+
+- Changes to allow for using or not using the stahnma/epel module [\#4](https://github.com/treydock/puppet-munge/pull/4) ([millerjl1701](https://github.com/millerjl1701))
+
 ## [1.0.0](https://github.com/treydock/puppet-munge/tree/1.0.0) (2017-11-13)
 [Full Changelog](https://github.com/treydock/puppet-munge/compare/0.1.1...1.0.0)
 
