@@ -1,0 +1,4 @@
+---
+munge::dev_package_name: libmunge-dev
+munge::munge_user_shell: /bin/false
+munge::munge_user_home: /nonexistent

@@ -1,0 +1,4 @@
+---
+munge::dev_package_name: munge-devel
+munge::munge_user_shell: /sbin/nologin
+munge::munge_user_home: /var/run/munge

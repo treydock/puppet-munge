@@ -1,10 +1,23 @@
 require 'spec_helper'
 
 describe 'munge' do
-  on_supported_os.each do |os, facts|
+  on_supported_os(facterversion: '2.5').each do |os, facts|
     context "on #{os}" do
       let(:facts) do
         facts
+      end
+
+      case facts[:osfamily]
+      when 'RedHat'
+        epel = true
+        dev_package = 'munge-devel'
+        user_shell = '/sbin/nologin'
+        user_home = '/var/run/munge'
+      when 'Debian'
+        epel = false
+        dev_package = 'libmunge-dev'
+        user_shell = '/bin/false'
+        user_home = '/nonexistent'
       end
 
       it { is_expected.to create_class('munge') }
@@ -31,8 +44,8 @@ describe 'munge' do
                                                     name: 'munge',
                                                     uid: nil,
                                                     gid: 'munge',
-                                                    shell: '/sbin/nologin',
-                                                    home: '/var/run/munge',
+                                                    shell: user_shell,
+                                                    home: user_home,
                                                     managehome: 'false',
                                                     comment: "Runs Uid 'N' Gid Emporium",
                                                     system: 'true',
@@ -61,7 +74,11 @@ describe 'munge' do
 
       context 'munge::repo' do
         it do
-          is_expected.to contain_class('epel')
+          if epel
+            is_expected.to contain_class('epel')
+          else
+            is_expected.not_to contain_class('epel')
+          end
         end
 
         context 'when manage_repo => false' do
@@ -84,7 +101,7 @@ describe 'munge' do
 
           it do
             is_expected.to contain_package('munge-devel').only_with(ensure: 'present',
-                                                                    name: 'munge-devel')
+                                                                    name: dev_package)
           end
         end
       end

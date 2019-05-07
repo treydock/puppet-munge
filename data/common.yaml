@@ -1,7 +1,6 @@
 ---
 munge::manage_repo: true
 munge::package_name: munge
-munge::dev_package_name: munge-devel
 munge::service_name: munge
 munge::service_hasstatus: true
 munge::service_hasrestart: true
