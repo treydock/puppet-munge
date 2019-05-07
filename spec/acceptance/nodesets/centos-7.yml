@@ -1,5 +1,5 @@
 HOSTS:
-  centos-7-x64-docker:
+  centos-7:
     roles:
       - agent
     platform: el-7-x86_64
@@ -9,8 +9,12 @@ HOSTS:
     docker_cmd:
       - '/usr/sbin/init'
     docker_image_commands:
-      - 'yum install -y tar wget git'
-    docker_container_name: munge-el7
+      - 'yum install -y wget'
+    docker_container_name: 'munge-el7'
 CONFIG:
   log_level: debug
   type: foss
+ssh:
+  password: root
+  auth_methods: ["password"]
+

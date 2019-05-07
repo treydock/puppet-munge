@@ -4,30 +4,52 @@
   "author": "treydock",
   "summary": "munge Puppet module",
   "license": "Apache-2.0",
-  "source": "git://github.com/treydock/puppet-munge.git",
-  "issues_url": "https://github.com/treydock/puppet-munge/issues",
+  "source": "https://github.com/treydock/puppet-munge",
   "project_page": "https://github.com/treydock/puppet-munge",
-  "tags": [ "munge" ],
+  "issues_url": "https://github.com/treydock/puppet-munge/issues",
+  "dependencies": [
+    {
+      "name": "puppetlabs/stdlib",
+      "version_requirement": ">= 4.13.1 <6.0.0"
+    },
+    {
+      "name": "stahnma/epel",
+      "version_requirement": ">= 1.0.0 <2.0.0"
+    }
+  ],
   "operatingsystem_support": [
     {
       "operatingsystem": "RedHat",
-      "operatingsystemrelease": [ "6", "7" ]
+      "operatingsystemrelease": [
+        "6",
+        "7"
+      ]
     },
     {
       "operatingsystem": "CentOS",
-      "operatingsystemrelease": [ "6", "7" ]
+      "operatingsystemrelease": [
+        "6",
+        "7"
+      ]
     },
     {
       "operatingsystem": "Scientific",
-      "operatingsystemrelease": [ "6", "7" ]
+      "operatingsystemrelease": [
+        "6",
+        "7"
+      ]
     }
   ],
-  "dependencies": [
-    { "name": "puppetlabs/stdlib", "version_requirement": ">= 4.13.1 <6.0.0" },
-    { "name": "stahnma/epel", "version_requirement": ">= 1.0.0 <2.0.0" }
-  ],
   "requirements": [
-    {"name": "puppet", "version_requirement": ">= 5.0.0 < 7.0.0" }
-  ]
+    {
+      "name": "puppet",
+      "version_requirement": ">= 5.0.0 < 7.0.0"
+    }
+  ],
+  "tags": [
+    "munge"
+  ],
+  "pdk-version": "1.10.0",
+  "template-url": "https://github.com/treydock/pdk-templates.git#master",
+  "template-ref": "heads/master-0-gf6132d4"
 }
-
