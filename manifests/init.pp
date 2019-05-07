@@ -3,7 +3,7 @@
 # See README.md for more details.
 #
 class munge (
-  Boolean $use_epel                     = $munge::params::use_epel,
+  Boolean $manage_repo                  = $munge::params::manage_repo,
   String $package_ensure                = 'present',
   String $package_name                  = $munge::params::package_name,
   Boolean $install_dev                  = false,

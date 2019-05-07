@@ -4,7 +4,7 @@
 #
 class munge::repo {
 
-  if $::munge::use_epel {
+  if $::munge::manage_repo {
     case $::osfamily {
       'RedHat': {
         contain ::epel

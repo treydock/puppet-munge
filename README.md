@@ -47,9 +47,9 @@ Manage munge and define a site specific munge.key
 
 #### munge
 
-##### `use_epel`
+##### `manage_repo`
 
-Whether or not to include the stahnma/epel module. If set to false, it is assumed that the munge RPMs are available via a different yum repository or package management system such as Spacewalk. (defaults to 'true').
+Whether or not to manage the repo necessary to install munge. If set to false, it is assumed that the munge RPMs are available via a different yum repository or package management system such as Spacewalk. (defaults to 'true').
 
 ##### `package_ensure`
 
