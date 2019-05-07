@@ -66,8 +66,8 @@ describe 'munge' do
           should contain_class('epel')
         end
         
-        context 'when use_epel => false' do
-          let(:params) {{ :use_epel => false }}
+        context 'when manage_repo => false' do
+          let(:params) {{ :manage_repo => false }}
           it { should_not contain_class('epel') }
         end
       end

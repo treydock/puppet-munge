@@ -6,7 +6,7 @@ class munge::params {
 
   case $::osfamily {
     'RedHat': {
-      $use_epel           = true
+      $manage_repo        = true
       $package_name       = 'munge'
       $dev_package_name   = 'munge-devel'
       $service_name       = 'munge'
