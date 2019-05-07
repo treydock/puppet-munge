@@ -8,7 +8,6 @@ describe 'munge' do
       end
 
       it { is_expected.to create_class('munge') }
-      it { is_expected.to contain_class('munge::params') }
 
       it { is_expected.to contain_anchor('munge::start').that_comes_before('Class[munge::user]') }
       it { is_expected.to contain_class('munge::user').that_comes_before('Class[munge::repo]') }
