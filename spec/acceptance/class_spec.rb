@@ -1,6 +1,13 @@
 require 'spec_helper_acceptance'
 
 describe 'munge class:' do
+  case fact('os.family')
+  when 'RedHat'
+    dev_package = 'munge-devel'
+  when 'Debian'
+    dev_package = 'libmunge-dev'
+  end
+
   context 'default parameters' do
     it 'runs successfully' do
       pp = <<-EOS
@@ -45,7 +52,7 @@ describe 'munge class:' do
       apply_manifest(pp, catch_changes: true)
     end
 
-    describe package('munge-devel') do
+    describe package(dev_package) do
       it { is_expected.to be_installed }
     end
   end

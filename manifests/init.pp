@@ -18,6 +18,8 @@ class munge (
   Boolean $manage_user                  = true,
   Optional[Integer] $munge_user_uid     = undef,
   Optional[Integer] $munge_group_gid    = undef,
+  Stdlib::Absolutepath $munge_user_shell = '/sbin/nologin',
+  Stdlib::Absolutepath $munge_user_home = '/var/run/munge',
 ) {
 
   if ! $facts['os']['family'] in ['RedHat'] {
