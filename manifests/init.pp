@@ -1,6 +1,45 @@
-# == Class: munge
+# @summary Manage MUNGE
 #
-# See README.md for more details.
+# @example
+#   class { 'munge':
+#      munge_key_source  => 'puppet:///modules/site_munge/munge.key',
+#    }
+#
+# @param manage_repo
+#   Whether or not to manage the repo necessary to install munge.
+#   If set to false, it is assumed that the munge RPMs are available via a different repository.
+# @param package_ensure
+#   package 'ensure' property
+# @param package_name
+#   Munge package name.
+# @param install_dev
+#   Sets if the munge-devel package should be installed
+# @param dev_package_name
+#   Munge dev package name.
+# @param service_name
+#   Munge service name
+# @param service_ensure
+#   Munge service 'ensure' property
+# @param service_enable
+#   Munge service 'enable' property
+# @param service_hasstatus
+#   Munge service hasstatus value.
+# @param service_hasrestart
+#   Munge service hasrestart value.
+# @param munge_key_path
+#   Path to the munge.key file.  Default is OS dependent.
+# @param munge_key_source
+#   The source for the munge.key file
+# @param manage_user
+#   Boolen that determines if munge user and group should be managed
+# @param munge_user_uid
+#   UID of the munge user
+# @param munge_group_gid
+#   GID of the munge group
+# @param munge_user_shell
+#   Shell of munge user
+# @param munge_user_home
+#   Home directory of munge user
 #
 class munge (
   Boolean $manage_repo                  = true,

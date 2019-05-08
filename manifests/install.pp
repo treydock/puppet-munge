@@ -1,7 +1,5 @@
-# == Class: munge::install
-#
-# Private class
-#
+# @summary Manage munge packages
+# @api private
 class munge::install {
 
   package { 'munge':

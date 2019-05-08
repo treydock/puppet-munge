@@ -1,7 +1,5 @@
-# == Class: munge::repo
-#
-# Private class
-#
+# @summary Manage munge repo
+# @api private
 class munge::repo {
 
   if $::munge::manage_repo {
