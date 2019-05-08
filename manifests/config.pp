@@ -1,7 +1,5 @@
-# == Class: munge::config
-#
-# Private class
-#
+# @summary Manage munge config
+# @api private
 class munge::config {
 
   file { '/etc/munge/munge.key':

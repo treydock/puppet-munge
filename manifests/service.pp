@@ -1,7 +1,5 @@
-# == Class: munge::service
-#
-# Private class
-#
+# @summary Manage munge service
+# @api private
 class munge::service {
 
   service { 'munge':

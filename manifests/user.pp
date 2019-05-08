@@ -1,4 +1,5 @@
-# Private class
+# @summary Manage munge user and group
+# @api private
 class munge::user {
 
   if $::munge::manage_user {
