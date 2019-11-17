@@ -33,6 +33,8 @@
       collection: puppet5
     - set: ubuntu-1804
       collection: puppet6
+  user: treydock
+  secure: "JAuMBsjZPxdFvs9kekGE8vlyO6I2W7cczDr8kSvUOXmsYVRQwSLIgCKF1diXdTq35PZ/423dlwdZNjb9mWazl2AB6TZW/TrdB3R+j6T5Qrt3UKj9Vo4WeM34wdb/YWyj8yY7VopfP1bP159vEWOT3SfTS4nySJfhHZF/dhKlT2Q="
 .gitlab-ci.yml:
   delete: true
 appveyor.yml:
