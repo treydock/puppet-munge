@@ -168,4 +168,13 @@ branches:
     - master
     - /^v\d/
 notifications:
-  email: false
+  email: treydock@gmail.com
+deploy:
+  provider: puppetforge
+  user: treydock
+  password:
+    secure: "JAuMBsjZPxdFvs9kekGE8vlyO6I2W7cczDr8kSvUOXmsYVRQwSLIgCKF1diXdTq35PZ/423dlwdZNjb9mWazl2AB6TZW/TrdB3R+j6T5Qrt3UKj9Vo4WeM34wdb/YWyj8yY7VopfP1bP159vEWOT3SfTS4nySJfhHZF/dhKlT2Q="
+  on:
+    tags: true
+    all_branches: true
+    condition: "$DEPLOY_TO_FORGE = yes"
