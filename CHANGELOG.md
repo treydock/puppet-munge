@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](http://semver.org).
 
+## [v2.1.0](https://github.com/treydock/puppet-munge/tree/v2.1.0) (2019-11-17)
+
+[Full Changelog](https://github.com/treydock/puppet-munge/compare/v2.0.0...v2.1.0)
+
+### Added
+
+- Add RedHat 8 and Debian 10 and drop Ubuntu 14.04 [\#12](https://github.com/treydock/puppet-munge/pull/12) ([treydock](https://github.com/treydock))
+
 ## [v2.0.0](https://github.com/treydock/puppet-munge/tree/v2.0.0) (2019-05-08)
 
 [Full Changelog](https://github.com/treydock/puppet-munge/compare/1.1.0...v2.0.0)
