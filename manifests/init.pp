@@ -28,10 +28,22 @@
 #   Munge service hasrestart value.
 # @param munge_key_path
 #   Path to the munge.key file.  Default is OS dependent.
+# @param log_dir
+#   Log directory path, should be unnecessary to set.
+# @param lib_dir
+#   /var/lib directory path, should be unnecessary to set.
+# @param conf_dir
+#   /etc/munge directory path, should be unnecessary to set.
+# @param run_dir
+#   daemon run directory path, should be unnecessary to set.
 # @param munge_key_source
 #   The source for the munge.key file
 # @param manage_user
 #   Boolen that determines if munge user and group should be managed
+# @param user
+#   User running munge
+# @param group
+#   Group running munge
 # @param munge_user_uid
 #   UID of the munge user
 # @param munge_group_gid
@@ -53,8 +65,14 @@ class munge (
   Boolean $service_hasstatus            = true,
   Boolean $service_hasrestart           = true,
   Stdlib::Absolutepath $munge_key_path  = '/etc/munge/munge.key',
+  Optional[Stdlib::Absolutepath] $log_dir = undef,
+  Optional[Stdlib::Absolutepath] $lib_dir = undef,
+  Optional[Stdlib::Absolutepath] $conf_dir = undef,
+  Optional[Stdlib::Absolutepath] $run_dir = undef,
   Optional[String] $munge_key_source    = undef,
   Boolean $manage_user                  = true,
+  String $user                          = 'munge',
+  String $group                         = 'munge',
   Optional[Integer] $munge_user_uid     = undef,
   Optional[Integer] $munge_group_gid    = undef,
   Stdlib::Absolutepath $munge_user_shell = '/sbin/nologin',

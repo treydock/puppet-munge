@@ -1,6 +1,12 @@
 require 'spec_helper_acceptance'
 
 describe 'munge class:' do
+  if fact('os.family') == 'RedHat' && fact('os.release.major').to_i >= 7
+    let(:user) { 'root' }
+  else
+    let(:user) { 'munge' }
+  end
+
   case fact('os.family')
   when 'RedHat'
     dev_package = 'munge-devel'
@@ -34,8 +40,8 @@ describe 'munge class:' do
     describe file('/etc/munge/munge.key') do
       it { is_expected.to be_file }
       it { is_expected.to be_mode 400 }
-      it { is_expected.to be_owned_by 'munge' }
-      it { is_expected.to be_grouped_into 'munge' }
+      it { is_expected.to be_owned_by user }
+      it { is_expected.to be_grouped_into user }
     end
   end
 
