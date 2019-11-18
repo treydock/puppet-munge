@@ -9,7 +9,11 @@ describe 'munge' do
 
       case facts[:osfamily]
       when 'RedHat'
-        epel = true
+        epel = if facts[:os]['release']['major'].to_i >= 8
+                 false
+               else
+                 true
+               end
         dev_package = 'munge-devel'
         user_shell = '/sbin/nologin'
         user_home = '/var/run/munge'
