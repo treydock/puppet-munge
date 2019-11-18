@@ -37,19 +37,12 @@
       collection: puppet5
     - set: ubuntu-1804
       collection: puppet6
-  allow_failures:
-    - rvm: '2.5.3'
-      env: PUPPET_INSTALL_TYPE=agent BEAKER_debug=true BEAKER_PUPPET_COLLECTION=puppet5 BEAKER_set=centos-8 BEAKER_TESTMODE=apply
-    - rvm: '2.5.3'
-      env: PUPPET_INSTALL_TYPE=agent BEAKER_debug=true BEAKER_PUPPET_COLLECTION=puppet6 BEAKER_set=centos-8 BEAKER_TESTMODE=apply
   user: treydock
   secure: "JAuMBsjZPxdFvs9kekGE8vlyO6I2W7cczDr8kSvUOXmsYVRQwSLIgCKF1diXdTq35PZ/423dlwdZNjb9mWazl2AB6TZW/TrdB3R+j6T5Qrt3UKj9Vo4WeM34wdb/YWyj8yY7VopfP1bP159vEWOT3SfTS4nySJfhHZF/dhKlT2Q="
 .gitlab-ci.yml:
   delete: true
 appveyor.yml:
   delete: true
-spec/acceptance/nodesets/centos-7.yml:
-  image: centos:7.6.1810
 spec/spec_helper_acceptance.rb:
   spec_overrides:
     - "proj_root = File.expand_path(File.join(File.dirname(__FILE__), '..'))"

@@ -5,7 +5,7 @@ class munge::user {
   if $::munge::manage_user {
     group { 'munge':
       ensure     => 'present',
-      name       => 'munge',
+      name       => $::munge::group,
       gid        => $::munge::munge_group_gid,
       system     => true,
       forcelocal => true,
@@ -13,9 +13,9 @@ class munge::user {
 
     user { 'munge':
       ensure     => 'present',
-      name       => 'munge',
+      name       => $::munge::user,
       uid        => $::munge::munge_user_uid,
-      gid        => 'munge',
+      gid        => $::munge::group,
       shell      => $::munge::munge_user_shell,
       home       => $::munge::munge_user_home,
       managehome => false,
