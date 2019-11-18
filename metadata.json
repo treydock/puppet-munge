@@ -1,6 +1,6 @@
 {
   "name": "treydock-munge",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "author": "treydock",
   "summary": "munge Puppet module",
   "license": "Apache-2.0",

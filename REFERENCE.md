@@ -126,6 +126,38 @@ Path to the munge.key file.  Default is OS dependent.
 
 Default value: '/etc/munge/munge.key'
 
+##### `log_dir`
+
+Data type: `Optional[Stdlib::Absolutepath]`
+
+Log directory path, should be unnecessary to set.
+
+Default value: `undef`
+
+##### `lib_dir`
+
+Data type: `Optional[Stdlib::Absolutepath]`
+
+/var/lib directory path, should be unnecessary to set.
+
+Default value: `undef`
+
+##### `conf_dir`
+
+Data type: `Optional[Stdlib::Absolutepath]`
+
+/etc/munge directory path, should be unnecessary to set.
+
+Default value: `undef`
+
+##### `run_dir`
+
+Data type: `Optional[Stdlib::Absolutepath]`
+
+daemon run directory path, should be unnecessary to set.
+
+Default value: `undef`
+
 ##### `munge_key_source`
 
 Data type: `Optional[String]`
@@ -141,6 +173,22 @@ Data type: `Boolean`
 Boolen that determines if munge user and group should be managed
 
 Default value: `true`
+
+##### `user`
+
+Data type: `String`
+
+User running munge
+
+Default value: 'munge'
+
+##### `group`
+
+Data type: `String`
+
+Group running munge
+
+Default value: 'munge'
 
 ##### `munge_user_uid`
 

@@ -2,7 +2,15 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](http://semver.org).
 
-## [v2.1.0](https://github.com/treydock/puppet-munge/tree/v2.1.0) (2019-11-17)
+## [v2.2.0](https://github.com/treydock/puppet-munge/tree/v2.2.0) (2019-11-17)
+
+[Full Changelog](https://github.com/treydock/puppet-munge/compare/v2.1.0...v2.2.0)
+
+### Added
+
+- Allow user running munge to be hacked for docker based tests [\#13](https://github.com/treydock/puppet-munge/pull/13) ([treydock](https://github.com/treydock))
+
+## [v2.1.0](https://github.com/treydock/puppet-munge/tree/v2.1.0) (2019-11-18)
 
 [Full Changelog](https://github.com/treydock/puppet-munge/compare/v2.0.0...v2.1.0)
 
