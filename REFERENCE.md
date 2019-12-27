@@ -166,6 +166,14 @@ The source for the munge.key file
 
 Default value: `undef`
 
+##### `munge_key_content`
+
+Data type: `Optional[String]`
+
+The content for the munge.key file
+
+Default value: `undef`
+
 ##### `manage_user`
 
 Data type: `Boolean`
