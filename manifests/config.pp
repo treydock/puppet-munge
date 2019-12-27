@@ -3,12 +3,13 @@
 class munge::config {
 
   file { '/etc/munge/munge.key':
-    ensure => 'file',
-    path   => $::munge::munge_key_path,
-    owner  => $::munge::user,
-    group  => $::munge::group,
-    mode   => '0400',
-    source => $::munge::munge_key_source,
+    ensure  => 'file',
+    path    => $::munge::munge_key_path,
+    owner   => $::munge::user,
+    group   => $::munge::group,
+    mode    => '0400',
+    source  => $::munge::munge_key_source,
+    content => $::munge::munge_key_content,
   }
 
   if $::munge::conf_dir {
