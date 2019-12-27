@@ -38,6 +38,8 @@
 #   daemon run directory path, should be unnecessary to set.
 # @param munge_key_source
 #   The source for the munge.key file
+# @param munge_key_content
+#   The content for the munge.key file
 # @param manage_user
 #   Boolen that determines if munge user and group should be managed
 # @param user
@@ -70,6 +72,7 @@ class munge (
   Optional[Stdlib::Absolutepath] $conf_dir = undef,
   Optional[Stdlib::Absolutepath] $run_dir = undef,
   Optional[String] $munge_key_source    = undef,
+  Optional[String] $munge_key_content   = undef,
   Boolean $manage_user                  = true,
   String $user                          = 'munge',
   String $group                         = 'munge',
