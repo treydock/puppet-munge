@@ -13,8 +13,8 @@
       "version_requirement": ">= 4.13.1 <7.0.0"
     },
     {
-      "name": "stahnma/epel",
-      "version_requirement": ">= 1.0.0 <2.0.0"
+      "name": "puppet/epel",
+      "version_requirement": ">= 3.0.0 <4.0.0"
     }
   ],
   "operatingsystem_support": [
@@ -67,7 +67,7 @@
   "tags": [
     "munge"
   ],
-  "pdk-version": "1.14.1",
+  "pdk-version": "1.17.0",
   "template-url": "https://github.com/treydock/pdk-templates.git#master",
-  "template-ref": "heads/master-0-g64aa7a6"
+  "template-ref": "heads/master-0-g38a74b5"
 }
