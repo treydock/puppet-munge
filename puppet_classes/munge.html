@@ -6,15 +6,15 @@
 <title>
   Puppet Class: munge
   
-    &mdash; Documentation by YARD 0.9.19
+    &mdash; Documentation by YARD 0.9.25
   
 </title>
 
-  <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+  <link rel="stylesheet" href="../css/style.css" type="text/css" />
 
-  <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+  <link rel="stylesheet" href="../css/common.css" type="text/css" />
 
-<script type="text/javascript" charset="utf-8">
+<script type="text/javascript">
   pathId = "puppet_classes::munge";
   relpath = '../';
 </script>
@@ -298,6 +298,78 @@ repository.</p>
   
     <li>
       
+        <span class='name'>log_dir</span>
+      
+      
+        <span class='type'>(<tt>Optional[Stdlib::Absolutepath]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Log directory path, should be unnecessary to set.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>lib_dir</span>
+      
+      
+        <span class='type'>(<tt>Optional[Stdlib::Absolutepath]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>/var/lib directory path, should be unnecessary to set.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>conf_dir</span>
+      
+      
+        <span class='type'>(<tt>Optional[Stdlib::Absolutepath]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>/etc/munge directory path, should be unnecessary to set.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>run_dir</span>
+      
+      
+        <span class='type'>(<tt>Optional[Stdlib::Absolutepath]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>daemon run directory path, should be unnecessary to set.</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
         <span class='name'>munge_key_source</span>
       
       
@@ -316,6 +388,24 @@ repository.</p>
   
     <li>
       
+        <span class='name'>munge_key_content</span>
+      
+      
+        <span class='type'>(<tt>Optional[String]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>The content for the munge.key file</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
         <span class='name'>manage_user</span>
       
       
@@ -328,6 +418,42 @@ repository.</p>
         &mdash;
         <div class='inline'>
 <p>Boolen that determines if munge user and group should be managed</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>user</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>&#39;munge&#39;</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>User running munge</p>
+</div>
+      
+    </li>
+  
+    <li>
+      
+        <span class='name'>group</span>
+      
+      
+        <span class='type'>(<tt>String</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>&#39;munge&#39;</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>Group running munge</p>
 </div>
       
     </li>
@@ -407,6 +533,7 @@ repository.</p>
 </ul>
 
 
+
 </div><div class="method_details_list">
   <table class="source_code">
     <tr>
@@ -414,20 +541,6 @@ repository.</p>
         <pre class="lines">
 
 
-44
-45
-46
-47
-48
-49
-50
-51
-52
-53
-54
-55
-56
-57
 58
 59
 60
@@ -446,10 +559,31 @@ repository.</p>
 73
 74
 75
-76</pre>
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97</pre>
       </td>
       <td>
-        <pre class="code"><span class="info file"># File 'manifests/init.pp', line 44</span>
+        <pre class="code"><span class="info file"># File 'manifests/init.pp', line 58</span>
 
 class munge (
   Boolean $manage_repo                  = true,
@@ -463,8 +597,15 @@ class munge (
   Boolean $service_hasstatus            = true,
   Boolean $service_hasrestart           = true,
   Stdlib::Absolutepath $munge_key_path  = &#39;/etc/munge/munge.key&#39;,
+  Optional[Stdlib::Absolutepath] $log_dir = undef,
+  Optional[Stdlib::Absolutepath] $lib_dir = undef,
+  Optional[Stdlib::Absolutepath] $conf_dir = undef,
+  Optional[Stdlib::Absolutepath] $run_dir = undef,
   Optional[String] $munge_key_source    = undef,
+  Optional[String] $munge_key_content   = undef,
   Boolean $manage_user                  = true,
+  String $user                          = &#39;munge&#39;,
+  String $group                         = &#39;munge&#39;,
   Optional[Integer] $munge_user_uid     = undef,
   Optional[Integer] $munge_group_gid    = undef,
   Stdlib::Absolutepath $munge_user_shell = &#39;/sbin/nologin&#39;,

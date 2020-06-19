@@ -6,15 +6,15 @@
 <title>
   Puppet Class: munge::user
   
-    &mdash; Documentation by YARD 0.9.19
+    &mdash; Documentation by YARD 0.9.25
   
 </title>
 
-  <link rel="stylesheet" href="../css/style.css" type="text/css" charset="utf-8" />
+  <link rel="stylesheet" href="../css/style.css" type="text/css" />
 
-  <link rel="stylesheet" href="../css/common.css" type="text/css" charset="utf-8" />
+  <link rel="stylesheet" href="../css/common.css" type="text/css" />
 
-<script type="text/javascript" charset="utf-8">
+<script type="text/javascript">
   pathId = "puppet_classes::munge::user";
   relpath = '../';
 </script>
@@ -85,6 +85,7 @@
 <div class="tags">
   
 
+
 </div><div class="method_details_list">
   <table class="source_code">
     <tr>
@@ -127,7 +128,7 @@ class munge::user {
   if $::munge::manage_user {
     group { &#39;munge&#39;:
       ensure     =&gt; &#39;present&#39;,
-      name       =&gt; &#39;munge&#39;,
+      name       =&gt; $::munge::group,
       gid        =&gt; $::munge::munge_group_gid,
       system     =&gt; true,
       forcelocal =&gt; true,
@@ -135,9 +136,9 @@ class munge::user {
 
     user { &#39;munge&#39;:
       ensure     =&gt; &#39;present&#39;,
-      name       =&gt; &#39;munge&#39;,
+      name       =&gt; $::munge::user,
       uid        =&gt; $::munge::munge_user_uid,
-      gid        =&gt; &#39;munge&#39;,
+      gid        =&gt; $::munge::group,
       shell      =&gt; $::munge::munge_user_shell,
       home       =&gt; $::munge::munge_user_home,
       managehome =&gt; false,
