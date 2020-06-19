@@ -1,5 +1,6 @@
 # Hack to work around issues with recent systemd and docker and running services as non-root
-if fact('os.family') == 'RedHat' && fact('os.release.major').to_i >= 7
+if (fact('os.family') == 'RedHat' && fact('os.release.major').to_i >= 7) ||
+   (fact('os.name') == 'Ubuntu' && fact('os.release.full') == '16.04')
   service_hack = <<-EOS
 [Service]
 User=root
