@@ -1,44 +1,17 @@
 ---
-.travis.yml:
-  dist: xenial
-  deploy: false
-  docker_defaults:
-    dist: xenial
-  docker_sets:
-    - set: centos-6
-      collection: puppet5
-    - set: centos-6
-      collection: puppet6
-    - set: centos-7
-      collection: puppet5
-    - set: centos-7
-      collection: puppet6
-    - set: centos-8
-      collection: puppet5
-    - set: centos-8
-      collection: puppet6
-    - set: debian-8
-      collection: puppet5
-    - set: debian-8
-      collection: puppet6
-    - set: debian-9
-      collection: puppet5
-    - set: debian-9
-      collection: puppet6
-    - set: debian-10
-      collection: puppet5
-    - set: debian-10
-      collection: puppet6
-    - set: ubuntu-1604
-      collection: puppet5
-    - set: ubuntu-1604
-      collection: puppet6
-    - set: ubuntu-1804
-      collection: puppet5
-    - set: ubuntu-1804
-      collection: puppet6
-  user: treydock
-  secure: "JAuMBsjZPxdFvs9kekGE8vlyO6I2W7cczDr8kSvUOXmsYVRQwSLIgCKF1diXdTq35PZ/423dlwdZNjb9mWazl2AB6TZW/TrdB3R+j6T5Qrt3UKj9Vo4WeM34wdb/YWyj8yY7VopfP1bP159vEWOT3SfTS4nySJfhHZF/dhKlT2Q="
+.github/workflows/ci.yaml:
+  acceptance_matrix:
+    set:
+      - centos-7
+      - centos-8
+      - debian-9
+      - debian-10
+      - ubuntu-1604
+      - ubuntu-1804
+      - ubuntu-2004
+    puppet:
+      - puppet6
+      - puppet7
 .gitlab-ci.yml:
   delete: true
 appveyor.yml:
