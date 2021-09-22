@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](http://semver.org).
 
+## [v3.1.0](https://github.com/treydock/puppet-munge/tree/v3.1.0) (2021-09-22)
+
+[Full Changelog](https://github.com/treydock/puppet-munge/compare/v3.0.0...v3.1.0)
+
+### Added
+
+- Bump upper version limit for the stdlib dependency [\#17](https://github.com/treydock/puppet-munge/pull/17) ([mrolli](https://github.com/mrolli))
+
 ## [v3.0.0](https://github.com/treydock/puppet-munge/tree/v3.0.0) (2021-03-17)
 
 [Full Changelog](https://github.com/treydock/puppet-munge/compare/v2.4.0...v3.0.0)
