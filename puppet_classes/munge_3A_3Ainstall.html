@@ -107,7 +107,8 @@
 14
 15
 16
-17</pre>
+17
+18</pre>
       </td>
       <td>
         <pre class="code"><span class="info file"># File 'manifests/install.pp', line 3</span>
@@ -115,8 +116,9 @@
 class munge::install {
 
   package { &#39;munge&#39;:
-    ensure =&gt; $::munge::package_ensure,
-    name   =&gt; $::munge::package_name,
+    ensure          =&gt; $::munge::package_ensure,
+    name            =&gt; $::munge::package_name,
+    install_options =&gt; $::munge::package_install_options,
   }
 
   if $::munge::install_dev {

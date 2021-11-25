@@ -530,6 +530,25 @@ repository.</p>
       
     </li>
   
+    <li>
+      
+        <span class='name'>package_install_options</span>
+      
+      
+        <span class='type'>(<tt>Optional[Array[String]]</tt>)</span>
+      
+      
+        <em class="default">(defaults to: <tt>undef</tt>)</em>
+      
+      
+        &mdash;
+        <div class='inline'>
+<p>An array of additional options to pass when installing a package. Typical
+usage is enabling certain repositories like EPEL.</p>
+</div>
+      
+    </li>
+  
 </ul>
 
 
@@ -541,8 +560,6 @@ repository.</p>
         <pre class="lines">
 
 
-58
-59
 60
 61
 62
@@ -580,10 +597,13 @@ repository.</p>
 94
 95
 96
-97</pre>
+97
+98
+99
+100</pre>
       </td>
       <td>
-        <pre class="code"><span class="info file"># File 'manifests/init.pp', line 58</span>
+        <pre class="code"><span class="info file"># File 'manifests/init.pp', line 60</span>
 
 class munge (
   Boolean $manage_repo                  = true,
@@ -610,6 +630,7 @@ class munge (
   Optional[Integer] $munge_group_gid    = undef,
   Stdlib::Absolutepath $munge_user_shell = &#39;/sbin/nologin&#39;,
   Stdlib::Absolutepath $munge_user_home = &#39;/var/run/munge&#39;,
+  Optional[Array[String]] $package_install_options = undef,
 ) {
 
   if ! $facts[&#39;os&#39;][&#39;family&#39;] in [&#39;RedHat&#39;] {
