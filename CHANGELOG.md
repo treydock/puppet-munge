@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](http://semver.org).
 
+## [v3.2.0](https://github.com/treydock/puppet-munge/tree/v3.2.0) (2021-11-25)
+
+[Full Changelog](https://github.com/treydock/puppet-munge/compare/v3.1.0...v3.2.0)
+
+### Added
+
+- Add package\_install\_options to the package resource [\#18](https://github.com/treydock/puppet-munge/pull/18) ([yorickps](https://github.com/yorickps))
+
 ## [v3.1.0](https://github.com/treydock/puppet-munge/tree/v3.1.0) (2021-09-22)
 
 [Full Changelog](https://github.com/treydock/puppet-munge/compare/v3.0.0...v3.1.0)

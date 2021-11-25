@@ -62,6 +62,7 @@ The following parameters are available in the `munge` class:
 * [`munge_group_gid`](#munge_group_gid)
 * [`munge_user_shell`](#munge_user_shell)
 * [`munge_user_home`](#munge_user_home)
+* [`package_install_options`](#package_install_options)
 
 ##### <a name="manage_repo"></a>`manage_repo`
 
@@ -255,4 +256,12 @@ Data type: `Stdlib::Absolutepath`
 Home directory of munge user
 
 Default value: `'/var/run/munge'`
+
+##### <a name="package_install_options"></a>`package_install_options`
+
+Data type: `Optional[Array[String]]`
+
+An array of additional options to pass when installing a package. Typical usage is enabling certain repositories like EPEL.
+
+Default value: ``undef``
 
