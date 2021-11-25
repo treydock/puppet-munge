@@ -3,8 +3,9 @@
 class munge::install {
 
   package { 'munge':
-    ensure => $::munge::package_ensure,
-    name   => $::munge::package_name,
+    ensure          => $::munge::package_ensure,
+    name            => $::munge::package_name,
+    install_options => $::munge::package_install_options,
   }
 
   if $::munge::install_dev {

@@ -54,6 +54,8 @@
 #   Shell of munge user
 # @param munge_user_home
 #   Home directory of munge user
+# @param package_install_options
+#   An array of additional options to pass when installing a package. Typical usage is enabling certain repositories like EPEL.
 #
 class munge (
   Boolean $manage_repo                  = true,
@@ -80,6 +82,7 @@ class munge (
   Optional[Integer] $munge_group_gid    = undef,
   Stdlib::Absolutepath $munge_user_shell = '/sbin/nologin',
   Stdlib::Absolutepath $munge_user_home = '/var/run/munge',
+  Optional[Array[String]] $package_install_options = undef,
 ) {
 
   if ! $facts['os']['family'] in ['RedHat'] {
