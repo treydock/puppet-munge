@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](http://semver.org).
 
+## [v4.1.0](https://github.com/treydock/puppet-munge/tree/v4.1.0) (2022-08-06)
+
+[Full Changelog](https://github.com/treydock/puppet-munge/compare/v4.0.0...v4.1.0)
+
+### Added
+
+- Allow newer EPEL module [\#20](https://github.com/treydock/puppet-munge/pull/20) ([treydock](https://github.com/treydock))
+
 ## [v4.0.0](https://github.com/treydock/puppet-munge/tree/v4.0.0) (2021-11-25)
 
 [Full Changelog](https://github.com/treydock/puppet-munge/compare/v3.2.0...v4.0.0)
