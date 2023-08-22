@@ -4,9 +4,11 @@
     set:
       - el7
       - el8
-      - ---el9
+      - el9
       - debian-10
+      - debian-11
       - ubuntu-2004
+      - ubuntu-2204
     puppet:
       - puppet7
       - puppet8
@@ -18,9 +20,3 @@ spec/spec_helper_acceptance.rb:
   spec_overrides:
     - "proj_root = File.expand_path(File.join(File.dirname(__FILE__), '..'))"
     - "copy_root_module_to(hosts, source: File.join(proj_root, 'tests/site_munge'), module_name: 'site_munge', ignore_list: [])"
-spec/acceptance/nodesets/el9.yml:
-  delete: true
-spec/acceptance/nodesets/debian-11.yml:
-  delete: true
-spec/acceptance/nodesets/ubuntu-2204.yml:
-  delete: true
