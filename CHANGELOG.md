@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](http://semver.org).
 
+## [v5.0.0](https://github.com/treydock/puppet-munge/tree/v5.0.0) (2023-08-22)
+
+[Full Changelog](https://github.com/treydock/puppet-munge/compare/v4.1.0...v5.0.0)
+
+### Changed
+
+- BREAKING: Major updates - read description [\#21](https://github.com/treydock/puppet-munge/pull/21) ([treydock](https://github.com/treydock))
+
+### Added
+
+- Support EL9, Debian 11, Ubuntu 22.04 [\#22](https://github.com/treydock/puppet-munge/pull/22) ([treydock](https://github.com/treydock))
+
 ## [v4.1.0](https://github.com/treydock/puppet-munge/tree/v4.1.0) (2022-08-06)
 
 [Full Changelog](https://github.com/treydock/puppet-munge/compare/v4.0.0...v4.1.0)

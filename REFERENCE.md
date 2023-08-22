@@ -38,42 +38,42 @@ class { 'munge':
 
 The following parameters are available in the `munge` class:
 
-* [`manage_repo`](#manage_repo)
-* [`package_ensure`](#package_ensure)
-* [`package_name`](#package_name)
-* [`install_dev`](#install_dev)
-* [`dev_package_name`](#dev_package_name)
-* [`service_name`](#service_name)
-* [`service_ensure`](#service_ensure)
-* [`service_enable`](#service_enable)
-* [`service_hasstatus`](#service_hasstatus)
-* [`service_hasrestart`](#service_hasrestart)
-* [`munge_key_path`](#munge_key_path)
-* [`log_dir`](#log_dir)
-* [`lib_dir`](#lib_dir)
-* [`conf_dir`](#conf_dir)
-* [`run_dir`](#run_dir)
-* [`munge_key_source`](#munge_key_source)
-* [`munge_key_content`](#munge_key_content)
-* [`manage_user`](#manage_user)
-* [`user`](#user)
-* [`group`](#group)
-* [`munge_user_uid`](#munge_user_uid)
-* [`munge_group_gid`](#munge_group_gid)
-* [`munge_user_shell`](#munge_user_shell)
-* [`munge_user_home`](#munge_user_home)
-* [`package_install_options`](#package_install_options)
+* [`manage_repo`](#-munge--manage_repo)
+* [`package_ensure`](#-munge--package_ensure)
+* [`package_name`](#-munge--package_name)
+* [`install_dev`](#-munge--install_dev)
+* [`dev_package_name`](#-munge--dev_package_name)
+* [`service_name`](#-munge--service_name)
+* [`service_ensure`](#-munge--service_ensure)
+* [`service_enable`](#-munge--service_enable)
+* [`service_hasstatus`](#-munge--service_hasstatus)
+* [`service_hasrestart`](#-munge--service_hasrestart)
+* [`munge_key_path`](#-munge--munge_key_path)
+* [`log_dir`](#-munge--log_dir)
+* [`lib_dir`](#-munge--lib_dir)
+* [`conf_dir`](#-munge--conf_dir)
+* [`run_dir`](#-munge--run_dir)
+* [`munge_key_source`](#-munge--munge_key_source)
+* [`munge_key_content`](#-munge--munge_key_content)
+* [`manage_user`](#-munge--manage_user)
+* [`user`](#-munge--user)
+* [`group`](#-munge--group)
+* [`munge_user_uid`](#-munge--munge_user_uid)
+* [`munge_group_gid`](#-munge--munge_group_gid)
+* [`munge_user_shell`](#-munge--munge_user_shell)
+* [`munge_user_home`](#-munge--munge_user_home)
+* [`package_install_options`](#-munge--package_install_options)
 
-##### <a name="manage_repo"></a>`manage_repo`
+##### <a name="-munge--manage_repo"></a>`manage_repo`
 
 Data type: `Boolean`
 
 Whether or not to manage the repo necessary to install munge.
 If set to false, it is assumed that the munge RPMs are available via a different repository.
 
-Default value: ``true``
+Default value: `false`
 
-##### <a name="package_ensure"></a>`package_ensure`
+##### <a name="-munge--package_ensure"></a>`package_ensure`
 
 Data type: `String`
 
@@ -81,7 +81,7 @@ package 'ensure' property
 
 Default value: `'present'`
 
-##### <a name="package_name"></a>`package_name`
+##### <a name="-munge--package_name"></a>`package_name`
 
 Data type: `String`
 
@@ -89,15 +89,15 @@ Munge package name.
 
 Default value: `'munge'`
 
-##### <a name="install_dev"></a>`install_dev`
+##### <a name="-munge--install_dev"></a>`install_dev`
 
 Data type: `Boolean`
 
 Sets if the munge-devel package should be installed
 
-Default value: ``false``
+Default value: `false`
 
-##### <a name="dev_package_name"></a>`dev_package_name`
+##### <a name="-munge--dev_package_name"></a>`dev_package_name`
 
 Data type: `String`
 
@@ -105,7 +105,7 @@ Munge dev package name.
 
 Default value: `'munge-devel'`
 
-##### <a name="service_name"></a>`service_name`
+##### <a name="-munge--service_name"></a>`service_name`
 
 Data type: `String`
 
@@ -113,7 +113,7 @@ Munge service name
 
 Default value: `'munge'`
 
-##### <a name="service_ensure"></a>`service_ensure`
+##### <a name="-munge--service_ensure"></a>`service_ensure`
 
 Data type: `String`
 
@@ -121,31 +121,31 @@ Munge service 'ensure' property
 
 Default value: `'running'`
 
-##### <a name="service_enable"></a>`service_enable`
+##### <a name="-munge--service_enable"></a>`service_enable`
 
 Data type: `Boolean`
 
 Munge service 'enable' property
 
-Default value: ``true``
+Default value: `true`
 
-##### <a name="service_hasstatus"></a>`service_hasstatus`
+##### <a name="-munge--service_hasstatus"></a>`service_hasstatus`
 
 Data type: `Boolean`
 
 Munge service hasstatus value.
 
-Default value: ``true``
+Default value: `true`
 
-##### <a name="service_hasrestart"></a>`service_hasrestart`
+##### <a name="-munge--service_hasrestart"></a>`service_hasrestart`
 
 Data type: `Boolean`
 
 Munge service hasrestart value.
 
-Default value: ``true``
+Default value: `true`
 
-##### <a name="munge_key_path"></a>`munge_key_path`
+##### <a name="-munge--munge_key_path"></a>`munge_key_path`
 
 Data type: `Stdlib::Absolutepath`
 
@@ -153,63 +153,63 @@ Path to the munge.key file.  Default is OS dependent.
 
 Default value: `'/etc/munge/munge.key'`
 
-##### <a name="log_dir"></a>`log_dir`
+##### <a name="-munge--log_dir"></a>`log_dir`
 
 Data type: `Optional[Stdlib::Absolutepath]`
 
 Log directory path, should be unnecessary to set.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="lib_dir"></a>`lib_dir`
+##### <a name="-munge--lib_dir"></a>`lib_dir`
 
 Data type: `Optional[Stdlib::Absolutepath]`
 
 /var/lib directory path, should be unnecessary to set.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="conf_dir"></a>`conf_dir`
+##### <a name="-munge--conf_dir"></a>`conf_dir`
 
 Data type: `Optional[Stdlib::Absolutepath]`
 
 /etc/munge directory path, should be unnecessary to set.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="run_dir"></a>`run_dir`
+##### <a name="-munge--run_dir"></a>`run_dir`
 
 Data type: `Optional[Stdlib::Absolutepath]`
 
 daemon run directory path, should be unnecessary to set.
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="munge_key_source"></a>`munge_key_source`
+##### <a name="-munge--munge_key_source"></a>`munge_key_source`
 
 Data type: `Optional[String]`
 
 The source for the munge.key file
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="munge_key_content"></a>`munge_key_content`
+##### <a name="-munge--munge_key_content"></a>`munge_key_content`
 
 Data type: `Optional[String]`
 
 The content for the munge.key file
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="manage_user"></a>`manage_user`
+##### <a name="-munge--manage_user"></a>`manage_user`
 
 Data type: `Boolean`
 
 Boolen that determines if munge user and group should be managed
 
-Default value: ``true``
+Default value: `true`
 
-##### <a name="user"></a>`user`
+##### <a name="-munge--user"></a>`user`
 
 Data type: `String`
 
@@ -217,7 +217,7 @@ User running munge
 
 Default value: `'munge'`
 
-##### <a name="group"></a>`group`
+##### <a name="-munge--group"></a>`group`
 
 Data type: `String`
 
@@ -225,23 +225,23 @@ Group running munge
 
 Default value: `'munge'`
 
-##### <a name="munge_user_uid"></a>`munge_user_uid`
+##### <a name="-munge--munge_user_uid"></a>`munge_user_uid`
 
 Data type: `Optional[Integer]`
 
 UID of the munge user
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="munge_group_gid"></a>`munge_group_gid`
+##### <a name="-munge--munge_group_gid"></a>`munge_group_gid`
 
 Data type: `Optional[Integer]`
 
 GID of the munge group
 
-Default value: ``undef``
+Default value: `undef`
 
-##### <a name="munge_user_shell"></a>`munge_user_shell`
+##### <a name="-munge--munge_user_shell"></a>`munge_user_shell`
 
 Data type: `Stdlib::Absolutepath`
 
@@ -249,7 +249,7 @@ Shell of munge user
 
 Default value: `'/sbin/nologin'`
 
-##### <a name="munge_user_home"></a>`munge_user_home`
+##### <a name="-munge--munge_user_home"></a>`munge_user_home`
 
 Data type: `Stdlib::Absolutepath`
 
@@ -257,11 +257,11 @@ Home directory of munge user
 
 Default value: `'/var/run/munge'`
 
-##### <a name="package_install_options"></a>`package_install_options`
+##### <a name="-munge--package_install_options"></a>`package_install_options`
 
 Data type: `Optional[Array[String]]`
 
 An array of additional options to pass when installing a package. Typical usage is enabling certain repositories like EPEL.
 
-Default value: ``undef``
+Default value: `undef`
 
