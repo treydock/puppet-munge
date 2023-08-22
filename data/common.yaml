@@ -1,5 +1,5 @@
 ---
-munge::manage_repo: true
+munge::manage_repo: false
 munge::package_name: munge
 munge::service_name: munge
 munge::service_hasstatus: true

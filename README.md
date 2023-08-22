@@ -35,32 +35,10 @@ Manage munge and define a site specific munge.key
 
 This module has been tested on:
 
-* CentOS/RedHat 6 x86_64
-* CentOS/RedHat 7 x86_64
-
-## Development
-
-### Testing
-
-Testing requires the following dependencies:
-
-* rake
-* bundler
-
-Install gem dependencies
-
-    bundle install
-
-Run unit tests
-
-    bundle exec rake test
-
-If you have Vagrant >= 1.2.0 installed you can run system tests
-
-    bundle exec rake beaker
-
-## TODO
-
-## Further Information
-
-*
+* RedHat/CentOS 7
+* RedHat/Rocky/AlmaLinux 8
+* RedHat/Rocky/AlmaLinux 9
+* Debian 10
+* Debian 11
+* Ubuntu 20.04
+* Ubuntu 22.04

@@ -58,7 +58,7 @@
 #   An array of additional options to pass when installing a package. Typical usage is enabling certain repositories like EPEL.
 #
 class munge (
-  Boolean $manage_repo                  = true,
+  Boolean $manage_repo                  = false,
   String $package_ensure                = 'present',
   String $package_name                  = 'munge',
   Boolean $install_dev                  = false,

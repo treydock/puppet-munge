@@ -3,8 +3,7 @@
 require 'spec_helper_acceptance'
 
 describe 'munge class:' do
-  if (fact('os.family') == 'RedHat' && fact('os.release.major').to_i >= 7) ||
-     (fact('os.name') == 'Ubuntu' && fact('os.release.full') == '16.04')
+  if (fact('os.family') == 'RedHat' && fact('os.release.major').to_i >= 7)
     let(:user) { 'root' }
   else
     let(:user) { 'munge' }
