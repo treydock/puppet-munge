@@ -1,16 +1,18 @@
+# frozen_string_literal: true
+
 # Hack to work around issues with recent systemd and docker and running services as non-root
 if (fact('os.family') == 'RedHat' && fact('os.release.major').to_i >= 7) ||
    (fact('os.name') == 'Ubuntu' && fact('os.release.full') == '16.04')
-  service_hack = <<-EOS
+  service_hack = <<-HACK
 [Service]
 User=root
 Group=root
-EOS
+  HACK
 
   on hosts, 'mkdir -p /etc/systemd/system/munge.service.d'
   create_remote_file(hosts, '/etc/systemd/system/munge.service.d/hack.conf', service_hack)
 
-  hiera_yaml = <<-EOS
+  hiera_yaml = <<-HIERA
 ---
 version: 5
 defaults:
@@ -19,8 +21,8 @@ defaults:
 hierarchy:
   - name: "Common"
     path: "common.yaml"
-EOS
-  common_yaml = <<-EOS
+  HIERA
+  common_yaml = <<-HIERA
 ---
 munge::manage_user: false
 munge::user: root
@@ -29,7 +31,7 @@ munge::lib_dir: /var/lib/munge
 munge::log_dir: /var/log/munge
 munge::conf_dir: /etc/munge
 munge::run_dir: /run/munge
-EOS
+  HIERA
 
   create_remote_file(hosts, '/etc/puppetlabs/puppet/hiera.yaml', hiera_yaml)
   on hosts, 'mkdir -p /etc/puppetlabs/puppet/data'

@@ -84,17 +84,15 @@ class munge (
   Stdlib::Absolutepath $munge_user_home = '/var/run/munge',
   Optional[Array[String]] $package_install_options = undef,
 ) {
+  contain munge::user
+  contain munge::repo
+  contain munge::install
+  contain munge::config
+  contain munge::service
 
-  if ! $facts['os']['family'] in ['RedHat'] {
-    fail("Unsupported osfamily: ${facts['os']['family']}, module ${module_name} only support osfamily RedHat")
-  }
-
-  anchor { 'munge::start': }
-  -> class { '::munge::user': }
-  -> class { '::munge::repo': }
-  -> class { '::munge::install': }
-  -> class { '::munge::config': }
-  ~> class { '::munge::service': }
-  -> anchor { 'munge::end': }
-
+  Class['munge::user']
+  -> Class['munge::repo']
+  -> Class['munge::install']
+  -> Class['munge::config']
+  ~> Class['munge::service']
 }
