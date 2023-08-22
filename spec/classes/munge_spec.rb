@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 
 describe 'munge' do
@@ -9,11 +11,7 @@ describe 'munge' do
 
       case facts[:osfamily]
       when 'RedHat'
-        epel = if facts[:os]['release']['major'].to_i >= 8
-                 false
-               else
-                 true
-               end
+        epel = facts[:os]['release']['major'].to_i < 8
         dev_package = 'munge-devel'
         user_shell = '/sbin/nologin'
         user_home = '/var/run/munge'
@@ -26,15 +24,13 @@ describe 'munge' do
 
       it { is_expected.to create_class('munge') }
 
-      it { is_expected.to contain_anchor('munge::start').that_comes_before('Class[munge::user]') }
       it { is_expected.to contain_class('munge::user').that_comes_before('Class[munge::repo]') }
       it { is_expected.to contain_class('munge::repo').that_comes_before('Class[munge::install]') }
       it { is_expected.to contain_class('munge::install').that_comes_before('Class[munge::config]') }
       it { is_expected.to contain_class('munge::config').that_notifies('Class[munge::service]') }
-      it { is_expected.to contain_class('munge::service').that_comes_before('Anchor[munge::end]') }
-      it { is_expected.to contain_anchor('munge::end') }
+      it { is_expected.to contain_class('munge::service') }
 
-      context 'munge::user' do
+      describe 'munge::user' do
         it do
           is_expected.to contain_group('munge').with(ensure: 'present',
                                                      name: 'munge',
@@ -76,7 +72,7 @@ describe 'munge' do
         end
       end
 
-      context 'munge::repo' do
+      describe 'munge::repo' do
         it do
           if epel
             is_expected.to contain_class('epel')
@@ -92,10 +88,11 @@ describe 'munge' do
         end
       end
 
-      context 'munge::install' do
+      describe 'munge::install' do
         it do
           is_expected.to contain_package('munge').only_with(ensure: 'present',
-                                                            name: 'munge')
+                                                            name: 'munge',
+                                                            notify: 'Service[munge]')
         end
 
         it { is_expected.not_to contain_package('munge-devel') }
@@ -110,7 +107,7 @@ describe 'munge' do
         end
       end
 
-      context 'munge::config' do
+      describe 'munge::config' do
         it do
           is_expected.to contain_file('/etc/munge/munge.key').only_with(ensure: 'file',
                                                                         path: '/etc/munge/munge.key',
@@ -120,7 +117,7 @@ describe 'munge' do
         end
       end
 
-      context 'munge::service' do
+      describe 'munge::service' do
         it do
           is_expected.to contain_service('munge').only_with(ensure: 'running',
                                                             enable: 'true',

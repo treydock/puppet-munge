@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'spec_helper_acceptance'
 
 describe 'munge class:' do
@@ -15,11 +17,11 @@ describe 'munge class:' do
     dev_package = 'libmunge-dev'
   end
 
-  context 'default parameters' do
+  context 'with default parameters' do
     it 'runs successfully' do
-      pp = <<-EOS
+      pp = <<-PP
       class { 'munge': munge_key_source => 'puppet:///modules/site_munge/munge.key' }
-      EOS
+      PP
 
       apply_manifest(pp, catch_failures: true)
       apply_manifest(pp, catch_changes: true)
@@ -48,12 +50,12 @@ describe 'munge class:' do
 
   context 'when install_dev => true' do
     it 'runs successfully' do
-      pp = <<-EOS
+      pp = <<-PP
       class { 'munge':
         install_dev       => true,
         munge_key_source  => 'puppet:///modules/site_munge/munge.key',
       }
-      EOS
+      PP
 
       apply_manifest(pp, catch_failures: true)
       apply_manifest(pp, catch_changes: true)
