@@ -6,7 +6,7 @@
 <title>
   Puppet Class: munge::repo
   
-    &mdash; Documentation by YARD 0.9.26
+    &mdash; Documentation by YARD 0.9.34
   
 </title>
 
@@ -82,6 +82,7 @@
 </div>
 
 
+
 <div class="tags">
   
 
@@ -104,26 +105,22 @@
 11
 12
 13
-14
-15
-16</pre>
+14</pre>
       </td>
       <td>
         <pre class="code"><span class="info file"># File 'manifests/repo.pp', line 3</span>
 
 class munge::repo {
-
-  if $::munge::manage_repo {
-    case $::osfamily {
+  if $munge::manage_repo {
+    case $facts[&#39;os&#39;][&#39;family&#39;] {
       &#39;RedHat&#39;: {
-        contain ::epel
+        contain epel
       }
       default: {
         # Do nothing
       }
     }
   }
-
 }</pre>
       </td>
     </tr>

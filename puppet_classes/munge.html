@@ -6,7 +6,7 @@
 <title>
   Puppet Class: munge
   
-    &mdash; Documentation by YARD 0.9.26
+    &mdash; Documentation by YARD 0.9.34
   
 </title>
 
@@ -82,6 +82,7 @@
 </div>
 
 
+
 <div class="tags">
   
   <div class="examples">
@@ -104,14 +105,12 @@
         <span class='type'>(<tt>Boolean</tt>)</span>
       
       
-        <em class="default">(defaults to: <tt>true</tt>)</em>
+        <em class="default">(defaults to: <tt>false</tt>)</em>
       
       
         &mdash;
         <div class='inline'>
-<p>Whether or not to manage the repo necessary to install munge. If set to
-false, it is assumed that the munge RPMs are available via a different
-repository.</p>
+<p>Whether or not to manage the repo necessary to install munge. If set to false, it is assumed that the munge RPMs are available via a different repository.</p>
 </div>
       
     </li>
@@ -543,8 +542,7 @@ repository.</p>
       
         &mdash;
         <div class='inline'>
-<p>An array of additional options to pass when installing a package. Typical
-usage is enabling certain repositories like EPEL.</p>
+<p>An array of additional options to pass when installing a package. Typical usage is enabling certain repositories like EPEL.</p>
 </div>
       
     </li>
@@ -598,15 +596,13 @@ usage is enabling certain repositories like EPEL.</p>
 95
 96
 97
-98
-99
-100</pre>
+98</pre>
       </td>
       <td>
         <pre class="code"><span class="info file"># File 'manifests/init.pp', line 60</span>
 
 class munge (
-  Boolean $manage_repo                  = true,
+  Boolean $manage_repo                  = false,
   String $package_ensure                = &#39;present&#39;,
   String $package_name                  = &#39;munge&#39;,
   Boolean $install_dev                  = false,
@@ -632,19 +628,17 @@ class munge (
   Stdlib::Absolutepath $munge_user_home = &#39;/var/run/munge&#39;,
   Optional[Array[String]] $package_install_options = undef,
 ) {
+  contain munge::user
+  contain munge::repo
+  contain munge::install
+  contain munge::config
+  contain munge::service
 
-  if ! $facts[&#39;os&#39;][&#39;family&#39;] in [&#39;RedHat&#39;] {
-    fail(&quot;Unsupported osfamily: ${facts[&#39;os&#39;][&#39;family&#39;]}, module ${module_name} only support osfamily RedHat&quot;)
-  }
-
-  anchor { &#39;munge::start&#39;: }
-  -&gt; class { &#39;::munge::user&#39;: }
-  -&gt; class { &#39;::munge::repo&#39;: }
-  -&gt; class { &#39;::munge::install&#39;: }
-  -&gt; class { &#39;::munge::config&#39;: }
-  ~&gt; class { &#39;::munge::service&#39;: }
-  -&gt; anchor { &#39;munge::end&#39;: }
-
+  Class[&#39;munge::user&#39;]
+  -&gt; Class[&#39;munge::repo&#39;]
+  -&gt; Class[&#39;munge::install&#39;]
+  -&gt; Class[&#39;munge::config&#39;]
+  ~&gt; Class[&#39;munge::service&#39;]
 }</pre>
       </td>
     </tr>

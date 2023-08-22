@@ -6,7 +6,7 @@
 <title>
   Puppet Class: munge::service
   
-    &mdash; Documentation by YARD 0.9.26
+    &mdash; Documentation by YARD 0.9.34
   
 </title>
 
@@ -82,6 +82,7 @@
 </div>
 
 
+
 <div class="tags">
   
 
@@ -101,23 +102,19 @@
 8
 9
 10
-11
-12
-13</pre>
+11</pre>
       </td>
       <td>
         <pre class="code"><span class="info file"># File 'manifests/service.pp', line 3</span>
 
 class munge::service {
-
   service { &#39;munge&#39;:
-    ensure     =&gt; $::munge::service_ensure,
-    enable     =&gt; $::munge::service_enable,
-    name       =&gt; $::munge::service_name,
-    hasstatus  =&gt; $::munge::service_hasstatus,
-    hasrestart =&gt; $::munge::service_hasrestart,
+    ensure     =&gt; $munge::service_ensure,
+    enable     =&gt; $munge::service_enable,
+    name       =&gt; $munge::service_name,
+    hasstatus  =&gt; $munge::service_hasstatus,
+    hasrestart =&gt; $munge::service_hasrestart,
   }
-
 }</pre>
       </td>
     </tr>

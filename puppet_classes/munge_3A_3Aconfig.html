@@ -6,7 +6,7 @@
 <title>
   Puppet Class: munge::config
   
-    &mdash; Documentation by YARD 0.9.26
+    &mdash; Documentation by YARD 0.9.34
   
 </title>
 
@@ -82,6 +82,7 @@
 </div>
 
 
+
 <div class="tags">
   
 
@@ -143,60 +144,58 @@
 50
 51
 52
-53
-54</pre>
+53</pre>
       </td>
       <td>
         <pre class="code"><span class="info file"># File 'manifests/config.pp', line 3</span>
 
 class munge::config {
-
   file { &#39;/etc/munge/munge.key&#39;:
     ensure  =&gt; &#39;file&#39;,
-    path    =&gt; $::munge::munge_key_path,
-    owner   =&gt; $::munge::user,
-    group   =&gt; $::munge::group,
+    path    =&gt; $munge::munge_key_path,
+    owner   =&gt; $munge::user,
+    group   =&gt; $munge::group,
     mode    =&gt; &#39;0400&#39;,
-    source  =&gt; $::munge::munge_key_source,
-    content =&gt; $::munge::munge_key_content,
+    source  =&gt; $munge::munge_key_source,
+    content =&gt; $munge::munge_key_content,
   }
 
-  if $::munge::conf_dir {
+  if $munge::conf_dir {
     file { &#39;/etc/munge&#39;:
       ensure =&gt; &#39;directory&#39;,
-      path   =&gt; $::munge::conf_dir,
-      owner  =&gt; $::munge::user,
-      group  =&gt; $::munge::group,
+      path   =&gt; $munge::conf_dir,
+      owner  =&gt; $munge::user,
+      group  =&gt; $munge::group,
       mode   =&gt; &#39;0700&#39;,
     }
   }
 
-  if $::munge::log_dir {
+  if $munge::log_dir {
     file { &#39;/var/log/munge&#39;:
       ensure =&gt; &#39;directory&#39;,
-      path   =&gt; $::munge::log_dir,
-      owner  =&gt; $::munge::user,
-      group  =&gt; $::munge::group,
+      path   =&gt; $munge::log_dir,
+      owner  =&gt; $munge::user,
+      group  =&gt; $munge::group,
       mode   =&gt; &#39;0700&#39;,
     }
   }
 
-  if $::munge::lib_dir {
+  if $munge::lib_dir {
     file { &#39;/var/lib/munge&#39;:
       ensure =&gt; &#39;directory&#39;,
-      path   =&gt; $::munge::lib_dir,
-      owner  =&gt; $::munge::user,
-      group  =&gt; $::munge::group,
+      path   =&gt; $munge::lib_dir,
+      owner  =&gt; $munge::user,
+      group  =&gt; $munge::group,
       mode   =&gt; &#39;0700&#39;,
     }
   }
 
-  if $::munge::run_dir {
+  if $munge::run_dir {
     file { &#39;/run/munge&#39;:
       ensure =&gt; &#39;directory&#39;,
-      path   =&gt; $::munge::run_dir,
-      owner  =&gt; $::munge::user,
-      group  =&gt; $::munge::group,
+      path   =&gt; $munge::run_dir,
+      owner  =&gt; $munge::user,
+      group  =&gt; $munge::group,
       mode   =&gt; &#39;0755&#39;,
     }
   }

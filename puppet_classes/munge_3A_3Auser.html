@@ -6,7 +6,7 @@
 <title>
   Puppet Class: munge::user
   
-    &mdash; Documentation by YARD 0.9.26
+    &mdash; Documentation by YARD 0.9.34
   
 </title>
 
@@ -82,6 +82,7 @@
 </div>
 
 
+
 <div class="tags">
   
 
@@ -116,38 +117,34 @@
 23
 24
 25
-26
-27
-28</pre>
+26</pre>
       </td>
       <td>
         <pre class="code"><span class="info file"># File 'manifests/user.pp', line 3</span>
 
 class munge::user {
-
-  if $::munge::manage_user {
+  if $munge::manage_user {
     group { &#39;munge&#39;:
       ensure     =&gt; &#39;present&#39;,
-      name       =&gt; $::munge::group,
-      gid        =&gt; $::munge::munge_group_gid,
+      name       =&gt; $munge::group,
+      gid        =&gt; $munge::munge_group_gid,
       system     =&gt; true,
       forcelocal =&gt; true,
     }
 
     user { &#39;munge&#39;:
       ensure     =&gt; &#39;present&#39;,
-      name       =&gt; $::munge::user,
-      uid        =&gt; $::munge::munge_user_uid,
-      gid        =&gt; $::munge::group,
-      shell      =&gt; $::munge::munge_user_shell,
-      home       =&gt; $::munge::munge_user_home,
+      name       =&gt; $munge::user,
+      uid        =&gt; $munge::munge_user_uid,
+      gid        =&gt; $munge::group,
+      shell      =&gt; $munge::munge_user_shell,
+      home       =&gt; $munge::munge_user_home,
       managehome =&gt; false,
       comment    =&gt; &quot;Runs Uid &#39;N&#39; Gid Emporium&quot;,
       system     =&gt; true,
       forcelocal =&gt; true,
     }
   }
-
 }</pre>
       </td>
     </tr>
