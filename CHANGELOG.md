@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/) and this project adheres to [Semantic Versioning](http://semver.org).
 
+## [v6.0.0](https://github.com/treydock/puppet-munge/tree/v6.0.0) (2024-11-27)
+
+[Full Changelog](https://github.com/treydock/puppet-munge/compare/v5.0.0...v6.0.0)
+
+### Changed
+
+- Drop EL7 and Debian 10, add Debian 12 and Ubuntu 24.04 [\#24](https://github.com/treydock/puppet-munge/pull/24) ([treydock](https://github.com/treydock))
+
+### Added
+
+- Allow munge\_key\_content to be provided as Binary type data [\#23](https://github.com/treydock/puppet-munge/pull/23) ([optiz0r](https://github.com/optiz0r))
+
 ## [v5.0.0](https://github.com/treydock/puppet-munge/tree/v5.0.0) (2023-08-22)
 
 [Full Changelog](https://github.com/treydock/puppet-munge/compare/v4.1.0...v5.0.0)

@@ -195,7 +195,7 @@ Default value: `undef`
 
 ##### <a name="-munge--munge_key_content"></a>`munge_key_content`
 
-Data type: `Optional[String]`
+Data type: `Optional[Variant[String,Binary]]`
 
 The content for the munge.key file
 
