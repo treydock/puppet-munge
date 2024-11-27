@@ -4,7 +4,7 @@ require 'spec_helper'
 
 describe 'munge' do
   on_supported_os(facterversion: '2.5').each do |os, facts|
-    context "on #{os}" do
+    context "when #{os}" do
       let(:facts) do
         facts
       end
@@ -36,7 +36,7 @@ describe 'munge' do
                                                      name: 'munge',
                                                      gid: nil,
                                                      system: 'true',
-                                                     forcelocal: 'true')
+                                                     forcelocal: 'true',)
         end
 
         it do
@@ -49,7 +49,7 @@ describe 'munge' do
                                                     managehome: 'false',
                                                     comment: "Runs Uid 'N' Gid Emporium",
                                                     system: 'true',
-                                                    forcelocal: 'true')
+                                                    forcelocal: 'true',)
         end
 
         context 'when munge_group_gid defined' do
@@ -92,7 +92,7 @@ describe 'munge' do
         it do
           is_expected.to contain_package('munge').only_with(ensure: 'present',
                                                             name: 'munge',
-                                                            notify: 'Service[munge]')
+                                                            notify: 'Service[munge]',)
         end
 
         it { is_expected.not_to contain_package('munge-devel') }
@@ -102,7 +102,7 @@ describe 'munge' do
 
           it do
             is_expected.to contain_package('munge-devel').only_with(ensure: 'present',
-                                                                    name: dev_package)
+                                                                    name: dev_package,)
           end
         end
       end
@@ -113,7 +113,7 @@ describe 'munge' do
                                                                         path: '/etc/munge/munge.key',
                                                                         owner: 'munge',
                                                                         group: 'munge',
-                                                                        mode: '0400')
+                                                                        mode: '0400',)
         end
       end
 
@@ -123,7 +123,7 @@ describe 'munge' do
                                                             enable: 'true',
                                                             name: 'munge',
                                                             hasstatus: 'true',
-                                                            hasrestart: 'true')
+                                                            hasrestart: 'true',)
         end
       end
     end
