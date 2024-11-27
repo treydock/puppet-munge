@@ -74,7 +74,7 @@ class munge (
   Optional[Stdlib::Absolutepath] $conf_dir = undef,
   Optional[Stdlib::Absolutepath] $run_dir = undef,
   Optional[String] $munge_key_source    = undef,
-  Optional[String] $munge_key_content   = undef,
+  Optional[Variant[String,Binary]] $munge_key_content   = undef,
   Boolean $manage_user                  = true,
   String $user                          = 'munge',
   String $group                         = 'munge',
