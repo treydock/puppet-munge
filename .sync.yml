@@ -2,16 +2,13 @@
 .github/workflows/ci.yaml:
   acceptance_matrix:
     set:
-      - ---el7
       - el8
       - el9
       - debian-11
       - debian-12
-      - ubuntu-2004
       - ubuntu-2204
       - ubuntu-2404
     puppet:
-      - puppet7
       - puppet8
 .gitlab-ci.yml:
   delete: true
@@ -21,3 +18,5 @@ spec/spec_helper_acceptance.rb:
   spec_overrides:
     - "proj_root = File.expand_path(File.join(File.dirname(__FILE__), '..'))"
     - "copy_root_module_to(hosts, source: File.join(proj_root, 'tests/site_munge'), module_name: 'site_munge', ignore_list: [])"
+spec/acceptance/nodesets/el10.yml:
+  delete: true
