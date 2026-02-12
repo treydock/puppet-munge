@@ -5,10 +5,5 @@ fixtures:
   forge_modules:
     stdlib:
       repo: "puppetlabs/stdlib"
-    epel:
-      repo: "puppet/epel"
-    yumrepo_core:
-      repo: "puppetlabs/yumrepo_core"
-      puppet_version: ">= 6.0.0"
   symlinks:
     munge: "#{source_dir}"

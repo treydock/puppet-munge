@@ -3,7 +3,7 @@
 require 'spec_helper'
 
 describe 'munge' do
-  on_supported_os(facterversion: '2.5').each do |os, facts|
+  on_supported_os.each do |os, facts|
     context "when #{os}" do
       let(:facts) do
         facts
@@ -11,12 +11,10 @@ describe 'munge' do
 
       case facts[:osfamily]
       when 'RedHat'
-        epel = facts[:os]['release']['major'].to_i < 8
         dev_package = 'munge-devel'
         user_shell = '/sbin/nologin'
         user_home = '/var/run/munge'
       when 'Debian'
-        epel = false
         dev_package = 'libmunge-dev'
         user_shell = '/bin/false'
         user_home = '/nonexistent'
@@ -24,8 +22,7 @@ describe 'munge' do
 
       it { is_expected.to create_class('munge') }
 
-      it { is_expected.to contain_class('munge::user').that_comes_before('Class[munge::repo]') }
-      it { is_expected.to contain_class('munge::repo').that_comes_before('Class[munge::install]') }
+      it { is_expected.to contain_class('munge::user').that_comes_before('Class[munge::install]') }
       it { is_expected.to contain_class('munge::install').that_comes_before('Class[munge::config]') }
       it { is_expected.to contain_class('munge::config').that_notifies('Class[munge::service]') }
       it { is_expected.to contain_class('munge::service') }
@@ -69,22 +66,6 @@ describe 'munge' do
 
           it { is_expected.not_to contain_group('munge') }
           it { is_expected.not_to contain_user('munge') }
-        end
-      end
-
-      describe 'munge::repo' do
-        it do
-          if epel
-            is_expected.to contain_class('epel')
-          else
-            is_expected.not_to contain_class('epel')
-          end
-        end
-
-        context 'when manage_repo => false' do
-          let(:params) { { manage_repo: false } }
-
-          it { is_expected.not_to contain_class('epel') }
         end
       end
 
