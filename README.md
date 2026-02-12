@@ -1,7 +1,7 @@
 # puppet-munge
 
 [![Puppet Forge](http://img.shields.io/puppetforge/v/treydock/munge.svg)](https://forge.puppetlabs.com/treydock/munge)
-[![Build Status](https://travis-ci.org/treydock/puppet-munge.png)](https://travis-ci.org/treydock/puppet-munge)
+[![CI Status](https://github.com/treydock/puppet-munge/workflows/CI/badge.svg?branch=master)](https://github.com/treydock/puppet-munge/actions?query=workflow%3ACI)
 
 #### Table of Contents
 
