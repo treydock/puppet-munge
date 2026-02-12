@@ -11,10 +11,6 @@
     {
       "name": "puppetlabs/stdlib",
       "version_requirement": ">= 4.13.1 <10.0.0"
-    },
-    {
-      "name": "puppet/epel",
-      "version_requirement": ">= 3.0.0 <6.0.0"
     }
   ],
   "operatingsystem_support": [
@@ -49,7 +45,6 @@
     {
       "operatingsystem": "Ubuntu",
       "operatingsystemrelease": [
-        "20.04",
         "22.04",
         "24.04"
       ]
@@ -58,13 +53,13 @@
   "requirements": [
     {
       "name": "puppet",
-      "version_requirement": ">= 7.0.0 < 9.0.0"
+      "version_requirement": ">= 8.0.0 < 9.0.0"
     }
   ],
   "tags": [
     "munge"
   ],
-  "pdk-version": "2.7.1",
+  "pdk-version": "3.4.0",
   "template-url": "https://github.com/treydock/pdk-templates.git#master",
-  "template-ref": "heads/master-0-gd2de99e"
+  "template-ref": "heads/master-0-g875588c"
 }

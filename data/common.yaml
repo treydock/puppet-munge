@@ -1,7 +1,4 @@
 ---
-munge::manage_repo: false
 munge::package_name: munge
 munge::service_name: munge
-munge::service_hasstatus: true
-munge::service_hasrestart: true
 munge::munge_key_path: /etc/munge/munge.key
