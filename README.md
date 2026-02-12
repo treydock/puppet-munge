@@ -37,6 +37,7 @@ This module has been tested on:
 
 * RedHat/Rocky/AlmaLinux 8
 * RedHat/Rocky/AlmaLinux 9
+* RedHat/Rocky/AlmaLinux 10
 * Debian 11
 * Debian 12
 * Ubuntu 22.04
