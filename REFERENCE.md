@@ -14,7 +14,6 @@
 
 * `munge::config`: Manage munge config
 * `munge::install`: Manage munge packages
-* `munge::repo`: Manage munge repo
 * `munge::service`: Manage munge service
 * `munge::user`: Manage munge user and group
 
@@ -38,7 +37,6 @@ class { 'munge':
 
 The following parameters are available in the `munge` class:
 
-* [`manage_repo`](#-munge--manage_repo)
 * [`package_ensure`](#-munge--package_ensure)
 * [`package_name`](#-munge--package_name)
 * [`install_dev`](#-munge--install_dev)
@@ -46,8 +44,6 @@ The following parameters are available in the `munge` class:
 * [`service_name`](#-munge--service_name)
 * [`service_ensure`](#-munge--service_ensure)
 * [`service_enable`](#-munge--service_enable)
-* [`service_hasstatus`](#-munge--service_hasstatus)
-* [`service_hasrestart`](#-munge--service_hasrestart)
 * [`munge_key_path`](#-munge--munge_key_path)
 * [`log_dir`](#-munge--log_dir)
 * [`lib_dir`](#-munge--lib_dir)
@@ -63,15 +59,6 @@ The following parameters are available in the `munge` class:
 * [`munge_user_shell`](#-munge--munge_user_shell)
 * [`munge_user_home`](#-munge--munge_user_home)
 * [`package_install_options`](#-munge--package_install_options)
-
-##### <a name="-munge--manage_repo"></a>`manage_repo`
-
-Data type: `Boolean`
-
-Whether or not to manage the repo necessary to install munge.
-If set to false, it is assumed that the munge RPMs are available via a different repository.
-
-Default value: `false`
 
 ##### <a name="-munge--package_ensure"></a>`package_ensure`
 
@@ -126,22 +113,6 @@ Default value: `'running'`
 Data type: `Boolean`
 
 Munge service 'enable' property
-
-Default value: `true`
-
-##### <a name="-munge--service_hasstatus"></a>`service_hasstatus`
-
-Data type: `Boolean`
-
-Munge service hasstatus value.
-
-Default value: `true`
-
-##### <a name="-munge--service_hasrestart"></a>`service_hasrestart`
-
-Data type: `Boolean`
-
-Munge service hasrestart value.
 
 Default value: `true`
 
