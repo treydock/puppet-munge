@@ -9,7 +9,7 @@ describe 'munge' do
         facts
       end
 
-      case facts[:osfamily]
+      case facts[:os]['family']
       when 'RedHat'
         dev_package = 'munge-devel'
         user_shell = '/sbin/nologin'
