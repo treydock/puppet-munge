@@ -19,10 +19,6 @@
 #   Munge service 'ensure' property
 # @param service_enable
 #   Munge service 'enable' property
-# @param service_hasstatus
-#   Munge service hasstatus value.
-# @param service_hasrestart
-#   Munge service hasrestart value.
 # @param munge_key_path
 #   Path to the munge.key file.  Default is OS dependent.
 # @param log_dir
@@ -62,8 +58,6 @@ class munge (
   String $service_name                  = 'munge',
   String $service_ensure                = 'running',
   Boolean $service_enable               = true,
-  Boolean $service_hasstatus            = true,
-  Boolean $service_hasrestart           = true,
   Stdlib::Absolutepath $munge_key_path  = '/etc/munge/munge.key',
   Optional[Stdlib::Absolutepath] $log_dir = undef,
   Optional[Stdlib::Absolutepath] $lib_dir = undef,

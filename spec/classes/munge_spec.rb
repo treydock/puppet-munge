@@ -102,9 +102,7 @@ describe 'munge' do
         it do
           is_expected.to contain_service('munge').only_with(ensure: 'running',
                                                             enable: 'true',
-                                                            name: 'munge',
-                                                            hasstatus: 'true',
-                                                            hasrestart: 'true',)
+                                                            name: 'munge',)
         end
       end
     end
